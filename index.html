@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liste des Chansons Karaoké</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Liste des Chansons Karaoké</h1>
+
+    <input type="text" id="search" placeholder="Rechercher une chanson ou un artiste...">
+
+    <div id="alphabet-filter">
+        <button onclick="filterByLetter('A')">A</button>
+        <button onclick="filterByLetter('B')">B</button>
+        <button onclick="filterByLetter('C')">C</button>
+        <button onclick="filterByLetter('D')">D</button>
+        <button onclick="filterByLetter('E')">E</button>
+        <button onclick="filterByLetter('F')">F</button>
+        <button onclick="filterByLetter('G')">G</button>
+        <button onclick="filterByLetter('H')">H</button>
+        <button onclick="filterByLetter('I')">I</button>
+        <button onclick="filterByLetter('J')">J</button>
+        <button onclick="filterByLetter('K')">K</button>
+        <button onclick="filterByLetter('L')">L</button>
+        <button onclick="filterByLetter('M')">M</button>
+        <button onclick="filterByLetter('N')">N</button>
+        <button onclick="filterByLetter('O')">O</button>
+        <button onclick="filterByLetter('P')">P</button>
+        <button onclick="filterByLetter('Q')">Q</button>
+        <button onclick="filterByLetter('R')">R</button>
+        <button onclick="filterByLetter('S')">S</button>
+        <button onclick="filterByLetter('T')">T</button>
+        <button onclick="filterByLetter('U')">U</button>
+        <button onclick="filterByLetter('V')">V</button>
+        <button onclick="filterByLetter('W')">W</button>
+        <button onclick="filterByLetter('X')">X</button>
+        <button onclick="filterByLetter('Y')">Y</button>
+        <button onclick="filterByLetter('Z')">Z</button>
+    </div>
+
+    <table id="songs-table">
+        <thead>
+            <tr>
+                <th>Artiste</th>
+                <th>Titre</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+
+    <div id="pagination">
+        <button id="prev" onclick="changePage(-1)">Précédent</button>
+        <span id="page-number">Page 1</span>
+        <button id="next" onclick="changePage(1)">Suivant</button>
+    </div>
+
+    <script src="script.js"></script>
+
+    <!-- Enregistrement du Service Worker -->
+    <script>
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('/service-worker.js')
+                .then(function(registration) {
+                    console.log('Service Worker enregistré avec succès:', registration);
+                })
+                .catch(function(error) {
+                    console.log('Erreur lors de l\'enregistrement du Service Worker:', error);
+                });
+        }
+    </script>
+</body>
+</html>
+
